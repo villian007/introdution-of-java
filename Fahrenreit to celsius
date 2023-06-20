@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class Solution {
+
+	public static void main(String[] args) {
+
+	Scanner M= new Scanner(System.in);
+		int S = M.nextInt();
+        int E = M.nextInt();
+        int W = M.nextInt();
+        
+        
+        
+        while (S<=E){
+         int c= (S-32)*5/9;
+            System.out.println (S+" "+c);
+            S=S+W;
+        }
+    }     
+}
+
