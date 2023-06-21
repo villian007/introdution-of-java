@@ -1,0 +1,36 @@
+
+public class Solution {
+	
+	
+	  public static String getCompressedString(String input) {
+    	//Your code goes here.
+        String output=""+input.charAt(0);
+        int count=1;
+        for (int i=1;i<input.length();i++)
+        {
+            if (input.charAt(i) != input.charAt(i-1))
+            {
+                //System.out.println("Count of " + input.charAt(i-1) + " = " + count);
+                if (count>1)
+                {
+                    output=output+Integer.toString(count);
+                }
+                output=output+input.charAt(i);
+                count=1;
+            }
+            else
+            {
+                count=count+1;
+            }            
+            
+        }
+        
+        if (count>1)
+        {
+            output=output+Integer.toString(count);
+        }
+        //System.out.println(output);
+        return output;
+    }
+}
+	
