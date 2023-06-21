@@ -1,0 +1,44 @@
+import java.util.Scanner;
+public class Main {
+	
+	public static void main(String[] args) {
+		Scanner s=new Scanner(System.in);
+		int n=s.nextInt();
+		int orig_n=n;
+		int sum=0;
+		int count=0;
+		
+		while(orig_n>0)
+		{
+			count=count+1;
+			orig_n=orig_n/10;
+		}
+		orig_n=n;
+		while(n>0)
+		{
+			int rem=n%10;
+			int sum_rem=1;
+			for(int i=0;i<count;i++)
+			{
+				sum_rem=sum_rem*rem;
+			
+			}
+			
+			sum=sum+sum_rem;
+			n=n/10;
+			}
+			if(sum==orig_n)
+			{
+				System.out.println("true");
+			}
+			else
+			{
+				System.out.println("false");
+			
+			}
+		
+	}
+
+	}
+
+
