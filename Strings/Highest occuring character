@@ -1,0 +1,21 @@
+public class Solution {
+
+	public static char highestOccuringChar(String str) {
+		int freq_Arr[] = new int[256]; // Create array to keep the count of individual characters and initialize the
+										// array as 0
+		int max = Integer.MIN_VALUE;
+		int max_Index = -1;
+		for (int i = 0; i < str.length(); i++) {
+			int chr = str.charAt(i);
+			freq_Arr[chr]++;
+		}
+		for (int j = 0; j < freq_Arr.length; j++) {
+			if (freq_Arr[j] > max) {
+				max = freq_Arr[j];
+				max_Index = j;
+			}
+		}
+		char result = (char) max_Index;
+		return result;
+	}
+}
