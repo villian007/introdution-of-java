@@ -1,0 +1,45 @@
+import java.util.Scanner;
+
+public class Solution {
+    
+    public static void main(String[] args) {
+    Scanner scan = new Scanner(System.in);
+        int N=scan.nextInt();
+        int spaces=N/2;
+        int val=N-2;
+        for(int i=0;i<N;i++)
+        {
+            
+            if (i<=(N/2))
+            {
+                for (int j=0;j<spaces;j++)
+            	{
+                	System.out.print(" ");
+            	}
+                spaces--;
+                
+                for (int j=0;j<(2*i)+1;j++)
+            	{
+                	System.out.print("*");
+            	}
+            }
+            else
+            {
+            	spaces++;
+                
+                for (int j=0;j<=spaces;j++)
+            	{
+                	System.out.print(" ");
+            	}               
+                for (int j=0;j<val;j++)
+            	{
+                	System.out.print("*");
+            	}
+                val=val-2;
+            }
+            System.out.println(" ");
+        }
+        scan.close();
+        
+    }
+}
