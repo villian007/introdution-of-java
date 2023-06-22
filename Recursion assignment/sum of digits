@@ -1,0 +1,12 @@
+
+public class solution {
+
+	public static int sumOfDigits(int input){
+	if (input==0){
+	return 0;
+	}
+int smalloutput=sumOfDigits(input/10);
+return (input%10+smalloutput);
+
+	}
+}
