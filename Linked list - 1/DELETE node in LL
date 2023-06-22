@@ -1,4 +1,4 @@
-/*
+/****************************************************************
 
 	Following is the Node class already written for the Linked List
 
@@ -11,32 +11,42 @@
     	}
 	}
 
-*/
+*****************************************************************/
 
 public class Solution {
-	public static LinkedListNode<Integer> insert(LinkedListNode<Integer> head, int pos, int data){
-	
-		if (pos == 0) {
-			LinkedListNode<Integer> newNode = new LinkedListNode<>(data);
-			newNode.next = head;
-			head = newNode;
-		} else {
-			int i = 0;
-			LinkedListNode<Integer> n = head;
-			for (i = 0; i < pos - 1 && n != null; i++) {
-			
-				n = n.next;
-			}
-			
-			if (n != null && pos > 0) {
-				LinkedListNode<Integer> newNode = new LinkedListNode<>(data);
-				newNode.next = n.next;
-				n.next = newNode;
-			}
-		}
-
-		return head;
+	public static LinkedListNode<Integer> deleteNode(LinkedListNode<Integer> head, int pos) {
+		 if (head==null){
+            return head;
+        }
+		 if (pos<0)
+        {
+            return head;
+        }
+            
+        else if(pos==0)
+        {
+            head=head.next;
+        }
+        else
+        {
+            LinkedListNode<Integer> n=head,delNode=null;
+            for (int i=0;i<pos-1 && n!=null;i++)
+            {
+                n=n.next;
+            }
+            if (n!=null && n.next!=null)
+            {
+                if (n.next!=null)
+                {
+                    n.next=n.next.next;
+                }
+                else
+                {
+                    n.next=null;
+                }
+                
+            }
+        }
+        return head;
 	}
 }
-
-	
