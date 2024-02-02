@@ -35,3 +35,45 @@ public class Main {
 	}
 }
 
+//also write this way
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+
+        boolean decreasing = true;
+        boolean increasing = false; // Initialize increasing as false
+
+        int prev = scanner.nextInt();
+
+        for (int i = 1; i < n; i++) {
+            int current = scanner.nextInt();
+
+            if (current == prev) {
+                System.out.println("false");
+                return; // Exit the program if there is an equal element
+            }
+
+            if (current < prev) {
+                if (decreasing == false || increasing == true) {
+                    System.out.println("false");
+                    return; // Exit the program if there is a decrease after increase
+                }
+                decreasing = true;
+            } else {
+                if (decreasing) {
+                    decreasing = false;
+                    increasing = true; // Set increasing to true if it starts increasing
+                }
+            }
+            prev = current;
+        }
+        System.out.println("true");
+    }
+}
+
+
